@@ -29,8 +29,8 @@ const UserSchema = new Schema({
       id: false
 });
 
-UserSchema.virtual('username').get(function() {
-    return this.email.slice(0, this.email.indexOf('@'));
+UserSchema.virtual('friendCount').get(function() {
+    return this.friends.length
   });
 
 const User = model('User', UserSchema);
